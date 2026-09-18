@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AusfA — Systems &amp; Networking</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="rack">
+
+  <header class="rack__status">
+    <div class="status__addr">nchu.osnet // taichung, tw</div>
+    <div class="status__clock" id="clock" aria-live="polite">
+      <span id="clock-time">00:00:00</span>
+      <span class="status__tz" id="clock-tz">TPE</span>
+      <button class="status__toggle" id="clock-format" title="Toggle 12h / 24h">24h</button>
+    </div>
+  </header>
+
+  <!-- 個人資料 -->
+  <section class="tier tier--hot" id="profile">
+    <div class="tier__label">
+      <span class="tier__name">個人資料</span>
+    </div>
+
+    <div class="tier__body profile">
+      <div class="profile__avatar" aria-hidden="true">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <rect width="120" height="120" rx="16" fill="#f2f9f8"/>
+          <circle cx="60" cy="46" r="22" fill="#0c6e63"/>
+          <path d="M20 108c4-26 26-38 40-38s36 12 40 38" fill="#0c6e63" opacity="0.85"/>
+        </svg>
+      </div>
+      <div class="profile__text">
+        <p class="profile__eyebrow">// edit me: replace name &amp; photo above with your own</p>
+        <h1>AusfA</h1>
+        <p class="profile__role">M.S. Computer Science &amp; Information Engineering — NCHU</p>
+        <p class="profile__bio">
+          Second-year graduate student in NCHU's Systems and Network Laboratory, working on
+          computing systems and networking. Current focus: making LLM inference cheaper by
+          rethinking where the KV cache lives — GPU memory, host DRAM, and persistent memory
+          each have a role, and most systems only use the first one well.
+        </p>
+        <div class="profile__meta">
+          <span>Taichung, Taiwan</span>
+          <span>·</span>
+          <span>Systems &amp; Network Lab, NCHU</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section class="tier tier--warm" id="skills">
+    <div class="tier__label">
+      <span class="tier__name">技能</span>
+    </div>
+
+    <div class="tier__body skills">
+      <article class="skill-card">
+        <h3>Systems Programming</h3>
+        <p>C / C++ across kernel-adjacent and userspace code: memory allocators, page
+        replacement logic (LRU, dirty-bit tracking), and thread synchronization debugging.</p>
+      </article>
+      <article class="skill-card">
+        <h3>Hardware-Aware Design</h3>
+        <p>CMOS logic design (XOR / XOR3), CXL memory expansion, and characterizing real
+        persistent-memory hardware like Intel Optane — not just simulating it.</p>
+      </article>
+      <article class="skill-card">
+        <h3>Networked &amp; Distributed Systems</h3>
+        <p>SDN layers, distributed multi-domain models, and TCP/UDP socket implementations
+        — the networking half of "Systems and Network Laboratory."</p>
+      </article>
+      <article class="skill-card">
+        <h3>Infrastructure &amp; Ops</h3>
+        <p>Remote server administration over SSH/RDP, fullstack development, and — as of
+        this semester — learning Git/GitHub properly instead of avoiding it.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 作品 -->
+  <section class="tier tier--cold" id="projects">
+    <div class="tier__label">
+      <span class="tier__name">作品</span>
+    </div>
+
+    <div class="tier__body projects">
+      <article class="project-card project-card--featured">
+        <div class="project-card__head">
+          <h3>智慧新藝城 — Smart New Art City</h3>
+          <span class="project-card__tag">大學畢業專題 — proof of concept</span>
+        </div>
+        <p>
+          一個以區塊鏈應用為核心概念的校園藝術平台，整合線上展示、推廣、教育、交易與收藏管理。
+          目標是讓校園內尚未成名的美術及藝術創作學系學生，也能有一個方便展示作品、連結潛在欣賞者的
+          數位空間；同時導入 AI 精準分類推薦、社群互動機制、以及區塊鏈與 NFT 技術確保作品出處與
+          所有權。目前已完成初步雛型功能，進入概念驗證（PoC）階段。
+        </p>
+        <ul class="project-card__stack">
+          <li>Blockchain / NFT</li>
+          <li>AI Recommendation</li>
+          <li>Community Platform</li>
+          <li>Digital Provenance</li>
+        </ul>
+        <div class="project-card__video">
+          <div class="project-card__video-frame">
+            <!-- 影片預留區：換成你的 <iframe> (YouTube) 或 <video> 標籤 -->
+            <span class="project-card__video-placeholder">// demo video goes here</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__head">
+          <h3>Lab Website &amp; Infrastructure</h3>
+          <span class="project-card__tag">ongoing</span>
+        </div>
+        <p>
+          Maintain the Systems and Network Laboratory's website and NAS: a
+          Node.js/Express + MongoDB stack behind Nginx, with automated backups replicating
+          the database and member photos to a Synology NAS on a nightly cron.
+        </p>
+        <ul class="project-card__stack">
+          <li>Node.js / Express</li>
+          <li>MongoDB</li>
+          <li>Nginx</li>
+          <li>PM2</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <footer class="rack__footer">
+    <p>Built for DIC-1 — Idea → AI Build → Test → GitHub → Publish.</p>
+    <p class="rack__footer-links">
+      <a href="#profile">個人資料</a>
+      <a href="#skills">技能</a>
+      <a href="#projects">作品</a>
+    </p>
+  </footer>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

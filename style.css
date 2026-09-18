@@ -1,0 +1,267 @@
+:root {
+  --bg: #ffffff;
+  --bg-raised: #f2f9f8;
+  --border: #cfe6e2;
+  --text: #12332e;
+  --text-dim: #5c7c76;
+
+  --hot: #0c6e63;
+  --hot-dim: #d7ece8;
+  --warm: #14958a;
+  --warm-dim: #e2f4f1;
+  --cold: #5fc3b8;
+  --cold-dim: #eafaf7;
+
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+.rack { max-width: 900px; margin: 0 auto; padding: 0 24px 48px; }
+
+/* ---- status bar / clock ---- */
+.rack__status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  flex-wrap: wrap;
+}
+
+.status__clock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.status__tz { color: var(--text-dim); font-size: 0.75rem; }
+
+.status__toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.status__toggle:hover { color: var(--text); border-color: var(--text-dim); }
+.status__toggle:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
+
+/* ---- tiers ---- */
+.tier {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+}
+
+.tier__label {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.tier__index { color: var(--text-dim); }
+.tier__name { font-weight: 600; font-size: 0.95rem; }
+.tier__note { color: var(--text-dim); }
+
+.tier--hot .tier__name { color: var(--hot); }
+.tier--warm .tier__name { color: var(--warm); }
+.tier--cold .tier__name { color: var(--cold); }
+
+/* ---- profile (tier 0) ---- */
+.profile {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.profile__avatar { flex: none; width: 96px; }
+.profile__avatar svg { width: 100%; border-radius: 16px; display: block; }
+
+.profile__eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--hot);
+  margin: 0 0 4px;
+}
+
+.profile__text h1 {
+  font-size: 2.2rem;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+
+.profile__role {
+  color: var(--text-dim);
+  margin: 0 0 14px;
+  font-size: 1rem;
+}
+
+.profile__bio { margin: 0 0 14px; max-width: 62ch; }
+
+.profile__meta {
+  display: flex;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-family: var(--mono);
+}
+
+/* ---- skills (tier 1) ---- */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.skill-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--warm);
+  border-radius: 6px;
+  padding: 18px 20px;
+}
+
+.skill-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+}
+
+.skill-card p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+
+/* ---- projects (tier 2) ---- */
+.projects { display: flex; flex-direction: column; gap: 20px; }
+
+.project-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--cold);
+  border-radius: 6px;
+  padding: 22px 24px;
+}
+
+.project-card--featured { border-left-color: var(--hot); }
+
+.project-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.project-card__head h3 { margin: 0; font-size: 1.15rem; }
+
+.project-card__tag {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.project-card p { margin: 0 0 14px; color: var(--text-dim); max-width: 66ch; }
+
+.project-card__stack {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
+.project-card__stack li {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 8px;
+  color: var(--text-dim);
+}
+
+.project-card__video { margin-top: 16px; }
+
+.project-card__video-frame {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card__video-placeholder {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+/* Once you have a real video, replace the placeholder <span> with e.g.:
+   <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+   and give the iframe: width:100%; height:100%; border:0; border-radius:6px; */
+
+/* ---- footer ---- */
+.rack__footer {
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.rack__footer-links { display: flex; gap: 14px; }
+.rack__footer-links a { color: var(--text-dim); text-decoration: none; }
+.rack__footer-links a:hover { color: var(--text); }
+
+/* ---- responsive ---- */
+@media (max-width: 640px) {
+  .profile { flex-direction: column; }
+  .profile__avatar { width: 72px; }
+  .skills { grid-template-columns: 1fr; }
+  .rack__status { justify-content: center; text-align: center; }
+}
