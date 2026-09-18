@@ -22,6 +22,8 @@
 
 * { box-sizing: border-box; }
 
+img { max-width: 100%; height: auto; }
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -107,7 +109,14 @@ a { color: inherit; }
 }
 
 .profile__avatar { flex: none; width: 96px; }
-.profile__avatar svg { width: 100%; border-radius: 16px; display: block; }
+.profile__avatar-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  border: 1px solid var(--border);
+}
 
 .profile__eyebrow {
   font-family: var(--mono);
@@ -233,20 +242,16 @@ a { color: inherit; }
   background: var(--bg);
   border: 1px dashed var(--border);
   border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
-.project-card__video-placeholder {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--text-dim);
+.project-card__video-frame iframe,
+.project-card__video-frame video {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
-
-/* Once you have a real video, replace the placeholder <span> with e.g.:
-   <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-   and give the iframe: width:100%; height:100%; border:0; border-radius:6px; */
 
 /* ---- footer ---- */
 .rack__footer {
