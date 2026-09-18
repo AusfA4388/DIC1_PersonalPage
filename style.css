@@ -197,6 +197,15 @@ a { color: inherit; }
 
 .project-card p { margin: 0 0 14px; color: var(--text-dim); max-width: 66ch; }
 
+.project-card__link {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--warm);
+  text-decoration: none;
+}
+.project-card__link:hover { text-decoration: underline; }
+
 .project-card__stack {
   list-style: none;
   display: flex;

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AusfA — Systems &amp; Networking</title>
+<title>侯佳旻 — Systems &amp; Networking</title>
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,19 +37,19 @@
         </svg>
       </div>
       <div class="profile__text">
-        <p class="profile__eyebrow">// edit me: replace name &amp; photo above with your own</p>
-        <h1>AusfA</h1>
-        <p class="profile__role">M.S. Computer Science &amp; Information Engineering — NCHU</p>
+        <p class="profile__eyebrow">// edit me: 換成你自己的照片</p>
+        <h1>侯佳旻</h1>
+        <p class="profile__role">國立中興大學 資訊工程學系 碩士在學中</p>
         <p class="profile__bio">
-          Second-year graduate student in NCHU's Systems and Network Laboratory, working on
-          computing systems and networking. Current focus: making LLM inference cheaper by
-          rethinking where the KV cache lives — GPU memory, host DRAM, and persistent memory
-          each have a role, and most systems only use the first one well.
+          畢業於國立臺中教育大學資訊工程學系，現就讀國立中興大學資訊工程學系碩士班，
+          隸屬作業系統與網路實驗室。目前研究方向為 LLM Inference 系統優化，希望運用
+          persistent memory byte-addressable 的特性加速推理，並設計更聰明的
+          memory allocation 策略，降低 KV Cache 面對長文本時產生的影響。
         </p>
         <div class="profile__meta">
-          <span>Taichung, Taiwan</span>
+          <span>台中市</span>
           <span>·</span>
-          <span>Systems &amp; Network Lab, NCHU</span>
+          <span>作業系統與網路實驗室，中興大學</span>
         </div>
       </div>
     </div>
@@ -63,24 +63,24 @@
 
     <div class="tier__body skills">
       <article class="skill-card">
-        <h3>Systems Programming</h3>
-        <p>C / C++ across kernel-adjacent and userspace code: memory allocators, page
-        replacement logic (LRU, dirty-bit tracking), and thread synchronization debugging.</p>
+        <h3>程式語言</h3>
+        <p>C、C++、JavaScript、PHP、HTML/CSS，另修習 R 語言以培養大數據時代下的
+        資料處理能力，具備扎實的程式設計基礎。</p>
       </article>
       <article class="skill-card">
-        <h3>Hardware-Aware Design</h3>
-        <p>CMOS logic design (XOR / XOR3), CXL memory expansion, and characterizing real
-        persistent-memory hardware like Intel Optane — not just simulating it.</p>
+        <h3>全端網頁開發</h3>
+        <p>前端 Vue.js／React.js，後端 Node.js／Express.js，熟悉資料庫與部署流程，
+        對 html、CSS、JavaScript 及 php 皆有相當熟悉度。</p>
       </article>
       <article class="skill-card">
-        <h3>Networked &amp; Distributed Systems</h3>
-        <p>SDN layers, distributed multi-domain models, and TCP/UDP socket implementations
-        — the networking half of "Systems and Network Laboratory."</p>
+        <h3>作業系統與記憶體管理</h3>
+        <p>碩士加入作業系統與網路實驗室，目前研究 LLM Inference 的系統優化，專注
+        persistent memory byte-addressable 特性與更聰明的 memory allocation 策略。</p>
       </article>
       <article class="skill-card">
-        <h3>Infrastructure &amp; Ops</h3>
-        <p>Remote server administration over SSH/RDP, fullstack development, and — as of
-        this semester — learning Git/GitHub properly instead of avoiding it.</p>
+        <h3>推薦系統與資料處理</h3>
+        <p>畢業專題中負責推薦系統開發，運用 Content-based Recommendation 與
+        Collaborative Filtering，依網站不同階段的使用人數進行推薦。</p>
       </article>
     </div>
   </section>
@@ -98,16 +98,18 @@
           <span class="project-card__tag">大學畢業專題 — proof of concept</span>
         </div>
         <p>
-          一個以區塊鏈應用為核心概念的校園藝術平台，整合線上展示、推廣、教育、交易與收藏管理。
-          目標是讓校園內尚未成名的美術及藝術創作學系學生，也能有一個方便展示作品、連結潛在欣賞者的
-          數位空間；同時導入 AI 精準分類推薦、社群互動機制、以及區塊鏈與 NFT 技術確保作品出處與
-          所有權。目前已完成初步雛型功能，進入概念驗證（PoC）階段。
+          結合 NFT 與人工智慧概念的校園藝術平台，整合線上展示、推廣、教育、交易與收藏
+          管理，讓校園內尚未成名的創作者也能展示作品並與潛在欣賞者連結。開發過程中因前後端
+          串接遇到瓶頸，改沿用系上學長以 WordPress 建置的網站，我的工作也從前端系統建置
+          （Vue.js）轉為推薦系統開發：運用 Content-based Recommendation 與 Collaborative
+          Filtering，依網站不同階段的使用人數進行推薦。目前已完成初步雛型功能，進入概念
+          驗證（PoC）階段。
         </p>
         <ul class="project-card__stack">
-          <li>Blockchain / NFT</li>
-          <li>AI Recommendation</li>
-          <li>Community Platform</li>
-          <li>Digital Provenance</li>
+          <li>Vue.js</li>
+          <li>WordPress</li>
+          <li>Content-based Recommendation</li>
+          <li>Collaborative Filtering</li>
         </ul>
         <div class="project-card__video">
           <div class="project-card__video-frame">
@@ -119,20 +121,21 @@
 
       <article class="project-card">
         <div class="project-card__head">
-          <h3>Lab Website &amp; Infrastructure</h3>
-          <span class="project-card__tag">ongoing</span>
+          <h3>實驗室網站</h3>
+          <span class="project-card__tag">2026/1 — 仍在進行</span>
         </div>
         <p>
-          Maintain the Systems and Network Laboratory's website and NAS: a
-          Node.js/Express + MongoDB stack behind Nginx, with automated backups replicating
-          the database and member photos to a Synology NAS on a nightly cron.
+          維護作業系統與網路實驗室的官方網站：前端以 React.js（npm、Tailwind CSS）打造，
+          後端使用 Node.js／Express.js 並以 PM2 管理程序，資料庫為 MongoDB，並負責資料庫
+          連線穩定性排查與備份監控，確保系統高可用性。
         </p>
         <ul class="project-card__stack">
+          <li>React.js</li>
           <li>Node.js / Express</li>
           <li>MongoDB</li>
-          <li>Nginx</li>
           <li>PM2</li>
         </ul>
+        <p><a class="project-card__link" href="https://osnet.cs.nchu.edu.tw" target="_blank" rel="noopener">前往查看 →</a></p>
       </article>
     </div>
   </section>
